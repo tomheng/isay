@@ -1,0 +1,47 @@
+{{ partial "header.html" . }}
+	  <div id="wrapper">
+		  <div class="box">
+			  <div class="header">
+			  <h1>{{.Title}}</h1>
+			  <small>{{ .Date.Format "2006-01-02" }},&nbsp;					{{.Site.Params.AuthorName}}
+,&nbsp; <a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a></small>
+		 	  </div>
+			  <div class="main">
+				  <div class="catelog" style="display:none;">
+	  			  <ol id="table">
+	  			    <li><a href="#section1">关于 <i class="serif">Typo.css</i></a></li>
+	  			    <li><a href="#section2">排版实例</a>
+	  			      <ul>
+	  			        <li><a href="#section2-1">例1：论语学而篇第一</a></li>
+	  			        <li><a href="#section2-2">例2：英文排版</a></li>
+	  			      </ul>
+	  			    </li>
+	  			    <li><a href="#section3">附录</a>
+	  			      <ul>
+	  			        <li><a href="#appendix1"><i class="serif">Typo.css</i> 排版偏重点</a></li>
+	  			        <li><a href="#appendix2">开源许可</a></li>
+	  			      </ul>
+	  			    </li>
+	  			  </ol>
+				  </div>
+				  <div class="content">
+		        {{ .Content }}
+					</div>
+			  </div>
+			  <div class="footer">
+				  标签: {{ range .Params.tags }}
+				         <a href="/tags/{{ . | urlize }}">{{ . }}</a> &nbsp;
+				      {{ end }}
+			  </div>
+	  	 </div>
+	</div>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script> 
+	<script type="text/javascript">
+	$(document).ready(function() {
+	  $('code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	  });
+	}); 
+	</script>
+ {{ partial "footer.html" . }}
+ 

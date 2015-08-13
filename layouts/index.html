@@ -1,0 +1,74 @@
+{{ partial "header.html" . }}
+
+	  <div id="wrapper">
+		  <div class="box">
+			  <div class="header">
+			  <h1>{{.Title}}</h1>
+				<blockquote>
+					{{.Site.Params.SubTitle}}
+				</blockquote>		 	  
+				</div>
+			  <div class="main">
+				  <div class="content">
+		              <h3>我是谁</h3>
+					  <p>
+						Tom Heng<br/>
+						——<br/>
+						伪技术男，绝对路痴，一直靠左右前后活着。<br/>
+						蜗居北京<br/>
+						目前缺爱<br/>
+						中度宅<br/>
+						不萌，不帅，不雷人<br/>
+						——
+					  </p>
+		              <h3>联系我</h3>
+					  <ul>
+						  <li><a href="http://weibo.com/tomheng">tomheng@weibo.com</a></li>
+						  <li><a href="https://twitter.com/tomheng">tomheng@twitter.com</a></li>
+						  
+					  </ul>
+		              <h3>最新文章</h3>
+				      <div class="posts">
+						  {{ range .Paginator.Pages }}
+				        <ul class="post">
+				          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+				        </ul>
+				        {{ end }}
+				      </div>
+				      {{ partial "pagination.html" . }}
+					 <h3> 热门标签</h3>
+					  <div id="all-tags">
+					    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+					      <a class="tag" data-count="{{$taxonomy.Count}}" href="/tags/{{ $name | urlize }}" title="{{$taxonomy.Count}}个话题">{{ $name }}</a>
+					    {{ end }}
+					  </div>
+					</div>
+			  </div>
+			  <div class="footer">
+				  
+			  </div>
+	  	 </div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			var total = 0;
+			var num = $('.tag').length;
+			$('.tag').each(function(){
+				total += $(this).data('count') >>> 0;
+			});
+			var avgc = total/num;
+			$('.tag').each(function(){
+				var count = $(this).data('count') >>> 0;
+				var ratio = (count - avgc)/(total -num);
+				if(count > avgc){
+					$(this).css("font-size", (ratio * 10 + 1) + 'em' );
+				}else{
+					$(this).fadeOut();
+				}
+				
+			});
+		});
+	</script>  
+{{ partial "header.html" . }}
+
+
