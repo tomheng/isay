@@ -85,3 +85,7 @@ html, body {
 .typo .hljs {
 	margin:-1em -1.5em;
 }
+
+code .token{
+	background:none !important;
+}
