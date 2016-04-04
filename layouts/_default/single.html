@@ -39,7 +39,8 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 	  $('code').each(function(i, block) {
-	    hljs.highlightBlock(block);
+		  $(this).removeClass("languate-go");
+		hljs.highlightBlock(block);
 	  });
 	}); 
 	</script>

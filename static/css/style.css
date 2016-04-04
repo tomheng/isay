@@ -6,6 +6,7 @@ html, body {
 	background-color: #e6e6e6;
 	margin:0;
 	padding:0;
+	text-rendering: auto;
 }
 #wrapper{
 	width:100%;
@@ -81,4 +82,11 @@ html, body {
 	border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 	height: auto;
+}
+.content pre{
+	background:#f7f7f7 !important;
+	border:none;
+}
+code .token{
+	background:none !important;
 }
