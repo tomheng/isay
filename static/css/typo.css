@@ -6,7 +6,7 @@ html {
   background: #fff;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  text-rendering: optimizelegibility;
+  /*text-rendering: optimizelegibility;*/
 }
 
 /* 如果你的项目仅支持 IE9+ | Chrome | Firefox 等，推荐在 <html> 中添加 .borderbox 这个 class */

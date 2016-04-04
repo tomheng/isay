@@ -83,6 +83,9 @@ html, body {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 	height: auto;
 }
+.typo .hljs {
+	margin:-1em -1.5em;
+}
 .content pre{
 	background:#f7f7f7 !important;
 	border:none;
